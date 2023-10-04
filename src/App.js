@@ -1,23 +1,53 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+
+
+const Header = () => {
+  return (
+    <div className='header'>
+      <div className='logo-container'>
+        <img className='logo' alt='' src='https://tse3.mm.bing.net/th?id=OIP.eyFnutyvj4Pu_a5YsSfvfQHaEp&pid=Api&P=0&h=180' />
+      </div>
+      <div className='nav-items'>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+const Body = () => {
+  return (
+    <div className='body'>
+      <div className='search-container'>search</div>
+      <div className='res-container'>
+        <div className='res-card'>
+          <ResCard />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const ResCard = () => {
+  return (
+    <div className='card'>
+
+      <h3>Meghana Foods</h3>
+    </div>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Body />
     </div>
   );
 }
