@@ -21,12 +21,33 @@ const Header = () => {
   );
 }
 
+const ResCard = (props) => {
+  console.log(props);
+  return (
+    <div className='card'>
+      <img className='res-logo' alt='' src='https://tse1.mm.bing.net/th?id=OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8&pid=Api&P=0&h=180' />
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine}</h4>
+      <h4>4.4 stars</h4>
+      <h4>30 minutes</h4>
+    </div>
+  )
+}
+
 const Body = () => {
   return (
     <div className='body'>
       <div className='search-container'>search</div>
       <div className='res-container'>
         <div className='res-card'>
+          <ResCard resName="Meghana Foods" cuisine="North Indian" />
+          <ResCard resName="KFC" cuisine="Fast Food" />
+          <ResCard />
+          <ResCard />
+          <ResCard />
+          <ResCard />
+          <ResCard />
+          <ResCard />
           <ResCard />
         </div>
       </div>
@@ -34,14 +55,7 @@ const Body = () => {
   );
 }
 
-const ResCard = () => {
-  return (
-    <div className='card'>
 
-      <h3>Meghana Foods</h3>
-    </div>
-  )
-}
 
 function App() {
   return (

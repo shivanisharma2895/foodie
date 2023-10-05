@@ -17,3 +17,29 @@
 .logo {
   width: 200px;
 }
+
+.res-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+
+}
+
+.card:hover {
+  border: 1px solid black;
+}
+
+.res-logo {
+  width: 100%;
+
+}
+
+.search-container {
+  padding: 10px;
+}
