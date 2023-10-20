@@ -47,7 +47,9 @@
 }
 
 .search-container {
-  padding: 10px;
+  gap: 10px;
+  display: flex;
+  margin: 10px;
 }
 
 
