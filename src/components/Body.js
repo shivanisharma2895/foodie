@@ -8,6 +8,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
 
     const [listedRestro, setListedRestro] = useState([]);
+    const [filteredRestro, setFilteredRestro] = useState([]);
 
 
     const [searchText, setSearchText] = useState("");//searchText is local state variable which will bind with the value of input.
@@ -22,6 +23,7 @@ const Body = () => {
         const json = await data.json();
         console.log(json);
         setListedRestro(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestro(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
     //conditional rendering using ternary operator(? , :)
@@ -30,7 +32,11 @@ const Body = () => {
             <div className='search-container'>
                 <div className="search-cont">
                     <input type="text" className="search-box" value={searchText} onChange={(e) => { setSearchText(e.target.value) }} />
-                    <button onClick={() => { console.log(searchText) }}>Search</button>
+                    <button onClick={() => {
+                        const filterRes = listedRestro.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setFilteredRestro(filterRes);
+                        console.log(filterRes);
+                    }}>Search</button>
                 </div>
                 <div>
                     <button onClick={() => {
@@ -42,7 +48,7 @@ const Body = () => {
             <div className='res-container'>
 
                 <div className='res-card'>
-                    {listedRestro.map((resList) => (<ResCard key={resList.info.id} resData={resList} />))}
+                    {filteredRestro.map((resList) => (<ResCard key={resList.info.id} resData={resList} />))}
 
                 </div>
             </div>
