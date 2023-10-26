@@ -32,7 +32,7 @@ const Body = () => {
             <div className='search-container'>
                 <div className="search-cont">
                     <input type="text" className="search-box" value={searchText} onChange={(e) => { setSearchText(e.target.value) }} />
-                    <button onClick={() => {
+                    <button id="btn-filter" onClick={() => {
                         const filterRes = listedRestro.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setFilteredRestro(filterRes);
                         console.log(filterRes);
