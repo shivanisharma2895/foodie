@@ -5,6 +5,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Body from './components/Body';
 
 
 const router = createBrowserRouter(
@@ -12,16 +13,23 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <AppLayOut />,
+      children: [
+        {
+          path: "/",
+          element: <Body />
+        },
+        {
+          path: "/about",
+          element: <About />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
+        }
+      ],
       errorElement: <Error />
-    },
-    {
-      path: "/about",
-      element: <About />
-    },
-    {
-      path: "/contact",
-      element: <Contact />
     }
+
   ]
 )
 
