@@ -23,7 +23,7 @@ const Header = () => {
                     <li><Link to="/">Home</Link></li>  {/**Link help us to navigate on different pages wihtout reloading the entire app */}
                     <li><Link to="/about">About Us</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link>Cart</Link></li>
+                    <li><Link to="/cart">Cart</Link></li>
                     <button onClick={() => { btnName === "Login" ? setBtnName("LogOut") : setBtnName("Login") }}>{btnName}</button>
                 </ul>
             </div>

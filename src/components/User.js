@@ -13,11 +13,12 @@ class User extends React.Component {
     }
     render() {
         const { name, location } = this.props;
+        const { count, count2 } = this.state;
 
         return (
             <div className="user-card">
-                <h2>Count : {this.state.count}</h2>
-                <h2>Count2: {this.state.count2}</h2>
+                <h2>Count : {count}</h2>
+                <h2>Count2: {count2}</h2>
                 <button onClick={() => {
                     this.setState({//class based component have setState function that updates state variables in form of an object.
                         count: this.state.count + 1,
