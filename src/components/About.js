@@ -1,8 +1,9 @@
-
+import React from "react";
 import User from "./User";
 
 
 const About = () => {
+
 
 
     return (
@@ -14,6 +15,10 @@ const About = () => {
             <User name={"Shivani"} location={"Gujrat"} />
         </div>
     )
+
+
 }
+
+
 
 export default About;
